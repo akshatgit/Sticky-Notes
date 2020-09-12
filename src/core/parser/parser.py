@@ -12,36 +12,92 @@ TODO convert the class to parserFactoy
 """
 class Parser():
 
-    def getTODOPython(self,filename):
+    def __init__(self, **kwargs):
         """
-        This function extract the to dos for a given file
-        This will return the todo in this format 
-        {"filepath":"path/to/file.py","todo":[(lineno,message)]}
+        Constructor of parser class
         """
-        # There are two ways todo can be in a file after # or inside """
-        # Above line will also be returned by parser #logic :P 
-        todoList = list()
-        todoDict = dict()
-        with open(filename) as f:
-            lines = f.readlines()
-            for i in range(0,len(lines)):
-                if "#" in lines[i]: # since comment can be after the code as well
-                    stripedLine = lines[i][lines[i].find("#"):].strip().lower()
-                    # TODO will modify the logic to adapt variants of todo
-                    if "todo" in stripedLine:
-                        todoList.append( (i+1,stripedLine[stripedLine.find("todo")+4:].strip()) )
-        if len(todoList) > 0:
-            todoDict["filepath"] = filename
-            todoDict["todo"] = todoList
-            return todoList
-        else:
-            return None
+        self.__code_files = kwargs.get("code_files")
+        self.parsed_todo = {
+            "Python" : list(),
+            "HTML" : list()
+        }
 
-# Stub Code to test parser
-def parser_test():
-    filename = "./parser.py"
-    parser_obj = Parser()
-    print(parser_obj.getTODOPython(filename))
+    def parse_todo(self):
+        for language in self.__code_files:
+            parser = get_parser(language)
+            for filepath in self.__code_files[language]:
+                parsed_todo_content = parser(filepath)
+                if parsed_todo_content is not None:
+                    self.parsed_todo[language].append(parsed_todo_content)
+        return self.parsed_todo
 
-parser_test()
+# This should be a different class, will refract code later
+def _getTODOPython(filename):
+    """
+    This function extract the to dos for a given file
+    This will return the todo in this format 
+    {"filepath":"path/to/file.py","todo":[(lineno,message)]}
+    """
+    # There are two ways todo can be in a file after # or inside """
+    # Above line will also be returned by parser #logic :P 
+    todoList = list()
+    todoDict = dict()
+    with open(filename) as f:
+        lines = f.readlines()
+        for i in range(0,len(lines)):
+            if "#" in lines[i]: # since comment can be after the code as well
+                stripedLine = lines[i][lines[i].find("#"):].strip().lower()
+                # TODO will modify the logic to adapt variants of todo
+                if "todo" in stripedLine:
+                    todoList.append( (i+1,stripedLine[stripedLine.find("todo")+4:].strip()) )
+    if len(todoList) > 0:
+        todoDict["filepath"] = filename
+        todoDict["todo"] = todoList
+        return todoList
+    else:
+        return None
+
+# This should be a different class, will refract code later, ignore code repeatition for now
+# As we will be adding support of other languages as well
+def _getTODOHTML(filename):
+    """
+    This function extract the to dos for a given file
+    This will return the todo in this format 
+    {"filepath":"path/to/file.html","todo":[(lineno,message)]}
+    """
+    # There is one wat I know todo can be added to a html file i.e inside <!--
+    # Above line will also be returned by parser #logic :P 
+    todoList = list()
+    todoDict = dict()
+    with open(filename) as f:
+        lines = f.readlines()
+        for i in range(0,len(lines)):
+            if "<!--" in lines[i]: # since comment can be after the code as well
+                stripedLine = lines[i][lines[i].find("<!--"):].strip().lower() # Value in find() can be replaced by the character of language used for commenting
+                # TODO will modify the logic to adapt variants of todo
+                if "todo" in stripedLine:
+                    todoList.append( (i+1,stripedLine[stripedLine.find("todo")+4:].strip()) )
+    if len(todoList) > 0:
+        todoDict["filepath"] = filename
+        todoDict["todo"] = todoList
+        return todoList
+    else:
+        return None
+
+# This will return the appropriate parser
+def get_parser(language):
+    if language == "Python": 
+        return _getTODOPython
+    elif language == "HTML":
+        return _getTODOHTML
+    else:
+        raise ValueError(language)
+
+# Driver Code to test parser
+# def parser_test():
+#     filename = "./parser.py"
+#     parser_obj = Parser()
+#     print(parser_obj.getTODOPython(filename))
+
+# parser_test()
 
