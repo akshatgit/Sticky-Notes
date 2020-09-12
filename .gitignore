@@ -1,3 +1,13 @@
+# Virtual env directory
 venv/*
+
+# Mac shit
 DS_store
+
+# Vscode shit
 .vscode/*
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
