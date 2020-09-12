@@ -25,41 +25,40 @@ class Todo:
         self.__todo_header = todo_header
 
     def get_todo_header(self):
-        return todo_header
+        return self.__todo_header
 
     def set_todo_body(self, todo_body):
         self.__set_todo_body = todo_body
 
     def get_todo_body(self):
-        return todo_body
+        return self.__todo_body
 
     def set_file_path(self, file_path):
         self.__file_path = file_path
 
     def get_file_path(self):
-        return file_path
+        return self.__file_path
 
     def set_line_no(self, line_no):
         self.__line_no = line_no
 
     def get_line_no(self):
-        return line_no
+        return self.__line_no
 
     def set_func_name(self, func_name):
         self.__func_name = func_name
 
     def get_func_name(self):
-        return func_name
+        return self.__func_name
 
     def set_class_name(self, class_name):
         self.__class_name = class_name
 
     def get_class_name(self):
-        return class_name
+        return self.__class_name
 
     def set_language(self, language):
         self.__language = language
 
     def get_language(self):
-        return language
-
+        return self.__language
