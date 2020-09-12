@@ -18,5 +18,8 @@ class Todo:
         #optional
         self.__class_name = kwargs.get("class_name")
 
+        #optional
+        self.__language = kwargs.get("language")
+
     # TODO : will add getter setter for all
 
