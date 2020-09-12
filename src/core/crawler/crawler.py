@@ -36,4 +36,8 @@ class Crawler():
     def getCodeFiles(self, language="Python"):
         # Return file list for the specific language
         return self.code_files[language]
+    
+    def getAllCodeFiles(self):
+        # Return the entire dictionary containing all code files
+        return self.code_files
     pass
