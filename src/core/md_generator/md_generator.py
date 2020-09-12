@@ -21,6 +21,7 @@ class MDGenerator:
         with open(self.__gen_path, "w") as gf:
             gf.write(rendered_todo_md)
 
+# for testing
 if __name__ == "__main__":
 
     todo_list = []
@@ -29,6 +30,10 @@ if __name__ == "__main__":
     )
     todo_list.append(
         Todo(todo_header="test2", todo_body="osjdisdj", file_path="/skjd/losk", line_no="11")
+    )
+
+    todo_list.append(
+        Todo(todo_header="test2", todo_body="osjdisdj", file_path="/skjd/losk", line_no="11", language="java")
     )
 
     m = MDGenerator(todo_list=todo_list)

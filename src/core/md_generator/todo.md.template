@@ -3,10 +3,16 @@
 ## {{ todo.get_todo_header() }}
 
 - File : {{ todo.get_file_path() }}
-- Line No : {{ todo.get_line_no() }}
-{% if todo.get_func_name() %}- Function Name : {{ todo.get_func_name() }} {% endif %}
-{% if todo.get_class_name() %}- Class Name : {{ todo.get_class_name() }} {% endif %}
-{% if todo.get_language() %}- Language : {{ todo.get_language() }} {% endif %}
+- Line No : {{ todo.get_line_no() -}}
+{% if todo.get_func_name() %}
+- Function Name : {{ todo.get_func_name() -}}
+{% endif -%}
+{% if todo.get_class_name() %}
+- Class Name : {{ todo.get_class_name() -}}
+{% endif -%}
+{% if todo.get_language() %}
+- Language : {{ todo.get_language() -}}
+{% endif %}
 
 {{ todo.get_todo_body() }}
 
