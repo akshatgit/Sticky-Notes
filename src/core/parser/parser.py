@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # imports
-from src.core.todo import Todo
+from src.core.util.todo import Todo
 
 # TODO write the below todo in multiline comment
 # TODO ideally there should be a common parser class and then subclass for each language for now creating a common one and adding python parser in it
