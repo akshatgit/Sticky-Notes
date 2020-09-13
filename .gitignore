@@ -17,3 +17,11 @@ todo.md
 
 #example dir
 example/*
+
+# ignore dist
+dist/*
+
+# ignore build
+build/*
+
+*.egg-info

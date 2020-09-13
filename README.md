@@ -9,26 +9,63 @@ Developers are a lazy creature and sometimes while implementing logic in code or
 
 ## Quickstart
 
-Create a virtualenv:
+### Installing Sticky-Notes
 
-```shell
-python -m venv venv
+**Using pip and github**
+
+You can easily install Sticky-Notes from github release using pip using the following steps
+
+```
+- Open terminal
+- Make sure you have pip3 installed
+- Exectute - sudo pip3 install https://github.com/akshatgit/Sticky-Notes/releases/download/v0.0.1/stickynotes-0.0.1.tar.gz
+- Above is just an example, you can use whichever release you want, although its better to use the latest release
+
 ```
 
-Install requirements:
+You can also install Sticky-Notes directly from the repo itself, if you want ongoing development code
 
-```shell
-pip install -r requirments.txt
+```
+sudo pip3 install git+git://github.com/akshatgit/Sticky-Notes
+
 ```
 
-Activate Vitual ENV:
+**Installing from source**
 
-```shell
-source venv/bin/activate
+You can install Sticky-Notes from the source as follows:
+
+```
+- Open terminal
+- Clone this repo using git clone or simply download it
+- cd Sticky-Notes
+- sudo python3 setup.py install
 ```
 
-Export python path at the root of the structure:
+Once you have installed Sticky-Notes using one of the above method, verify that its installed using :
 
-```shell
- export PYTHONPATH='.'
+```
+stickynotes --help
+
+```
+
+## Sticky-Notes Usage
+
+```
+Usage: stickynotes [options]
+
+Options:
+  -h, --help         show this help message and exit
+  -d DIR, --dir=DIR  path to repo to scan | default is current directory
+  -o OUT, --out=OUT  path to generate the todo md file along with name |
+                     default is todo.md in current directory
+```
+
+You can generate the markdown file for your TODOs by simply invoking stickynotes without any args from within your repo
+It will generate a file named ```todo.md``` in the root of your repo.
+
+You can also sepcify the path to your repo and custom path for your todo.md file.
+
+```
+stickynotes -d /path/to/your/repo -o /path/to/todo_file_name.md
+
 ```
