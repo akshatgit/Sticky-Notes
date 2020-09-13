@@ -30,6 +30,24 @@ sudo pip3 install git+git://github.com/akshatgit/Sticky-Notes
 
 ```
 
+**Installing from source**
+
+You can install Sticky-Notes from the source as follows:
+
+```
+- Open terminal
+- Clone this repo using git clone or simply download it
+- cd Sticky-Notes
+- sudo python3 setup.py install
+```
+
+Once you have installed Sticky-Notes using one of the above method, verify that its installed using :
+
+```
+stickynotes --help
+
+```
+
 Create a virtualenv:
 
 ```shell
