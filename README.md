@@ -69,3 +69,7 @@ You can also sepcify the path to your repo and custom path for your todo.md file
 stickynotes -d /path/to/your/repo -o /path/to/todo_file_name.md
 
 ```
+
+## Cite
+
+- [Language extension](https://gist.github.com/aymen-mouelhi/82c93fbcd25f091f2c13faa5e0d61760) by Aymen Mouelhi
