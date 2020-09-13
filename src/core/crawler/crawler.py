@@ -1,5 +1,6 @@
 import os
 import json
+from src.core.util.conf.config import ConfigReader
 class Crawler():
     '''
         Class to scan a particular directory for python and HTML files. 
@@ -11,7 +12,7 @@ class Crawler():
 
         self.code_files = dict()
 
-        self.language_config = "./conf/languages.json"
+        self.language_config = ConfigReader().getConfig()["Lang-extensions"]
         self.language_patterns = dict()
 
         # Read Language extensions
@@ -23,8 +24,7 @@ class Crawler():
     def _import_config(self):
 
         # Import Language extensions and create a mapping. for e.g. {".py": "Python"}
-        conf = json.loads(open(self.language_config).read())
-        for lang in conf:
+        for lang in self.language_config:
             lang_name = lang["name"]
             if "extensions" in lang:
                 extensions = lang["extensions"]
