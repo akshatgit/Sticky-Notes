@@ -30,6 +30,7 @@ class Parser():
                 parsed_todo_content = parser(filepath)
                 if parsed_todo_content is not None:
                     self.parsed_todo[language].append(parsed_todo_content)
+
         return self.parsed_todo
 
     # This function will transform the old todo list and return new one
@@ -67,7 +68,7 @@ def _getTODOPython(filename):
     if len(todoList) > 0:
         todoDict["filepath"] = filename
         todoDict["todo"] = todoList
-        return todoList
+        return todoDict
     else:
         return None
 
@@ -94,7 +95,7 @@ def _getTODOHTML(filename):
     if len(todoList) > 0:
         todoDict["filepath"] = filename
         todoDict["todo"] = todoList
-        return todoList
+        return todoDict
     else:
         return None
 

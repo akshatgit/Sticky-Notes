@@ -13,7 +13,7 @@ def drive():
     # commandline option parser
     parser = optparse.OptionParser()
     parser.add_option("-d", "--dir", default=".", dest="dir", type="string", help="path to repo to scan | default is current directory")
-    parser.add_option("-o", "--out", dest="out", type="string", help="path to generate the todo md file along with name | default is todo.md in current directory")
+    parser.add_option("-o", "--out", default="todo.md", dest="out", type="string", help="path to generate the todo md file along with name | default is todo.md in current directory")
 
     (options, args) = parser.parse_args()
 
