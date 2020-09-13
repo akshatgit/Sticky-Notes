@@ -20,3 +20,6 @@ example/*
 
 # ignore dist
 dist/*
+
+# ignore build
+build/*
