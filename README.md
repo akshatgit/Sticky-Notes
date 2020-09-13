@@ -9,6 +9,27 @@ Developers are a lazy creature and sometimes while implementing logic in code or
 
 ## Quickstart
 
+### Installing Sticky-Notes
+
+**Using pip and github**
+
+You can easily install Sticky-Notes from github release using pip using the following steps
+
+```
+- Open terminal
+- Make sure you have pip3 installed
+- Exectute - sudo pip3 install https://github.com/akshatgit/Sticky-Notes/releases/download/v0.0.1/stickynotes-0.0.1.tar.gz
+- Above is just an example, you can use whichever release you want, although its better to use the latest release
+
+```
+
+You can also install Sticky-Notes directly from the repo itself, if you want ongoing development code
+
+```
+sudo pip3 install git+git://github.com/akshatgit/Sticky-Notes
+
+```
+
 Create a virtualenv:
 
 ```shell
