@@ -17,3 +17,6 @@ todo.md
 
 #example dir
 example/*
+
+# ignore dist
+dist/*
