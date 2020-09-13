@@ -59,3 +59,13 @@ Options:
   -o OUT, --out=OUT  path to generate the todo md file along with name |
                      default is todo.md in current directory
 ```
+
+You can generate the markdown file for your TODOs by simply invoking stickynotes without any args from within your repo
+It will generate a file named ```todo.md``` in the root of your repo.
+
+You can also sepcify the path to your repo and custom path for your todo.md file.
+
+```
+stickynotes -d /path/to/your/repo -o /path/to/todo_file_name.md
+
+```
