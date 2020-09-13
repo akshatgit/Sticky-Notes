@@ -11,3 +11,17 @@ DS_store
 __pycache__/
 *.py[cod]
 *$py.class
+
+# Test todo.md
+todo.md
+
+#example dir
+example/*
+
+# ignore dist
+dist/*
+
+# ignore build
+build/*
+
+*.egg-info
