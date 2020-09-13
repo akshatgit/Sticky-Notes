@@ -14,3 +14,6 @@ __pycache__/
 
 # Test todo.md
 todo.md
+
+#example dir
+example/*
