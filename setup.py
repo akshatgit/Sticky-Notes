@@ -18,7 +18,7 @@ setup(name='stickynotes-0.1',
       description='Tool to track, extract and generate mark down files from Todos present in code repositories.',
       long_description=readme(),
       classifiers=[
-        'Development Status :: 0.1',
+        'Development Status :: 0.0.1',
         'License :: Apache License 2.0',
         'Programming Language :: Python :: 3.5',
         'Automation :: Documentation :: VCS',
