@@ -3,6 +3,7 @@ from setuptools import setup
 import setuptools
 import shutil
 import os
+from src import __version__
 
 def readme():
     return "StickyNotes"
@@ -14,11 +15,11 @@ def get_dependencies():
     return lines
 
 setup(name='stickynotes',
-      version='0.0.3',
+      version=__version__,
       description='Tool to track, extract and generate mark down files from Todos present in code repositories.',
       long_description=readme(),
       classifiers=[
-        'Development Status :: 0.0.3',
+        'Development Status :: ' + __version__,
         'License :: Apache License 2.0',
         'Programming Language :: Python :: 3.5',
         'Automation :: Documentation :: VCS',

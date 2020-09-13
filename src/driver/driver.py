@@ -7,6 +7,7 @@ import optparse
 from src.core.crawler.crawler import Crawler
 from src.core.md_generator.md_generator import MDGenerator
 from src.core.parser.parser import Parser
+from src import __version__
 
 def drive():
 
@@ -14,8 +15,13 @@ def drive():
     parser = optparse.OptionParser()
     parser.add_option("-d", "--dir", default=".", dest="dir", type="string", help="path to repo to scan | default is current directory")
     parser.add_option("-o", "--out", default="todo.md", dest="out", type="string", help="path to generate the todo md file along with name | default is todo.md in current directory")
+    parser.add_option("-v", "--version", action="store_true", dest="version", help="Displays version")
 
     (options, args) = parser.parse_args()
+
+    if options.version:
+        print ("Version : {version}".format(version=__version__))
+        exit(0)
 
     print ("Generating Mark down file...")
 
