@@ -1,6 +1,6 @@
 from src.core.util.todo import Todo
 
-class HtmlTodoParser:
+class HTMLTodoParser:
 
     def __init__(self):
         self.language = "HTML"

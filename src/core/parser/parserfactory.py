@@ -1,4 +1,4 @@
-from src.core.parser.language_parsers.html import HtmlTodoParser
+from src.core.parser.language_parsers.html import HTMLTodoParser
 from src.core.parser.language_parsers.python import PythonTodoParser
 
 class ParserFactory:
@@ -23,6 +23,6 @@ class ParserFactory:
         if language == "Python":
             return PythonTodoParser()
         elif language == "HTML":
-            return HtmlTodoParser()
+            return HTMLTodoParser()
         else:
             raise ValueError(language)
