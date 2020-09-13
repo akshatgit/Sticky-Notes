@@ -11,9 +11,7 @@
 - Class Name : {{ todo.get_class_name() -}}
 {% endif -%}
 {% if todo.get_language() %}
-- Language : {{ todo.get_language() -}}
+- Language : {{ todo.get_language() }}
 {% endif %}
-
-{{ todo.get_todo_body() }}
 
 {% endfor %}

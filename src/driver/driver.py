@@ -6,6 +6,7 @@ import optparse
 
 from src.core.crawler.crawler import Crawler
 from src.core.md_generator.md_generator import MDGenerator
+from src.core.parser.parser import Parser
 
 def drive():
 
@@ -24,11 +25,12 @@ def drive():
     code_files_dict = crawler.getAllCodeFiles()
 
     # get the list of todos from the parser
-    # Use md generator to generate the todo md file
+    parser = Parser(code_files=code_files_dict)
+    todo_list = parser.get_todo_list()
 
-    # example call to generator
-    # todo_list is list of Todo's from parser
-    # md_generator = MDGenerator(todo_list=todo_list, gen_path=options.out)
+    # Use md generator to generate the todo md file
+    md_generator = MDGenerator(todo_list=todo_list, gen_path=options.out)
+    md_generator.generate_todo_md()
 
 # for local testing
 if __name__ == "__main__":
