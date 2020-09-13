@@ -27,3 +27,19 @@ Export python path at the root of the structure:
 ```shell
  export PYTHONPATH='.'
 ```
+
+Make your changes
+
+```
+Hack, Hack, Hack !!!
+
+```
+
+Test your changes:
+
+```
+python3 -m src.driver.driver [otions]
+
+```
+
+Once you are staisfied with your changes, shoot a PR
