@@ -1,3 +1,4 @@
 include README.md
 include LICENSE
 include src/core/md_generator/todo.md.template
+include requirements.txt
