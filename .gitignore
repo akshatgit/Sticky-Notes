@@ -23,3 +23,5 @@ dist/*
 
 # ignore build
 build/*
+
+*.egg-info

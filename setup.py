@@ -13,8 +13,8 @@ def get_dependencies():
     lines = [line.strip() for line in lines]
     return lines
 
-setup(name='stickynotes-0.1',
-      version='0.1',
+setup(name='stickynotes',
+      version='0.0.1',
       description='Tool to track, extract and generate mark down files from Todos present in code repositories.',
       long_description=readme(),
       classifiers=[
