@@ -25,4 +25,5 @@ class ParserFactory:
         elif language == "HTML":
             return HTMLTodoParser()
         else:
+            print ("{language} not supported".format(language=language))
             raise ValueError(language)

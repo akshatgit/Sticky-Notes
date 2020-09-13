@@ -25,7 +25,10 @@ class Parser():
     def get_todo_list(self):
         factory = ParserFactory()
         for language in self.__code_files:
-            parser = factory.get_parser(language)
+            try:
+                parser = factory.get_parser(language)
+            except Exception as ex:
+                continue
             for filepath in self.__code_files[language]:
                 todos_of_file = parser.parse(filepath) # TODO Optimize this line
                 if todos_of_file is not None:
