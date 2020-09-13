@@ -30,7 +30,7 @@ setup(name='stickynotes-0.1',
       packages=setuptools.find_packages(),
       install_requires=get_dependencies(),
       entry_points={
-          'console_scripts': ['ep2=src.driver.driver:drive'],
+          'console_scripts': ['stickynotes=src.driver.driver:drive'],
       },
       include_package_data=True,
       zip_safe=False)
