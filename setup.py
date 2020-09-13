@@ -14,11 +14,11 @@ def get_dependencies():
     return lines
 
 setup(name='stickynotes',
-      version='0.0.1',
+      version='0.0.3',
       description='Tool to track, extract and generate mark down files from Todos present in code repositories.',
       long_description=readme(),
       classifiers=[
-        'Development Status :: 0.0.1',
+        'Development Status :: 0.0.3',
         'License :: Apache License 2.0',
         'Programming Language :: Python :: 3.5',
         'Automation :: Documentation :: VCS',
