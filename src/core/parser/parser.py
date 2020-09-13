@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # imports
-# from src.core.util import Crawler
+from src.core.todo import Todo
 
 # TODO write the below todo in multiline comment
 # TODO ideally there should be a common parser class and then subclass for each language for now creating a common one and adding python parser in it
@@ -21,8 +21,9 @@ class Parser():
             "Python" : list(),
             "HTML" : list()
         }
+        self.todo_list = list()
 
-    def parse_todo(self):
+    def _parse_todo(self):
         for language in self.__code_files:
             parser = get_parser(language)
             for filepath in self.__code_files[language]:
@@ -30,6 +31,19 @@ class Parser():
                 if parsed_todo_content is not None:
                     self.parsed_todo[language].append(parsed_todo_content)
         return self.parsed_todo
+
+    # This function will transform the old todo list and return new one
+    # TODO optimize this function, current version: language -> file -> todolist -> todo
+    def get_todo_list(self):
+        old_todo_list = self._parse_todo()
+        for todo_lang in old_todo_list:
+            for todo_file in old_todo_list[todo_lang]:
+                for todo_item in todo_file["todo"]:
+                    todo = Todo(todo_header=todo_item[1], todo_body=None, file_path=todo_file["filepath"], line_no=todo_item[0])
+                    self.todo_list.append(todo)
+
+        return self.todo_list
+            
 
 # This should be a different class, will refract code later
 def _getTODOPython(filename):
