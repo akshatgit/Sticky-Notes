@@ -25,7 +25,10 @@ class Parser():
 
     def _parse_todo(self):
         for language in self.__code_files:
-            parser = get_parser(language)
+            try:
+                parser = get_parser(language)
+            except Exception as ex:
+                continue
             for filepath in self.__code_files[language]:
                 parsed_todo_content = parser(filepath)
                 if parsed_todo_content is not None:
@@ -106,6 +109,7 @@ def get_parser(language):
     elif language == "HTML":
         return _getTODOHTML
     else:
+        print ("Not supported for {language}".format(language=language))
         raise ValueError(language)
 
 # Driver Code to test parser
