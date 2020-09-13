@@ -24,7 +24,7 @@ class MDGenerator:
             md_template = Template(tf.read())
 
         # Render the template using Jinja2
-        rendered_todo_md = md_template.render(todo_list=self.__todo_list, t=self.__todo_list[0])
+        rendered_todo_md = md_template.render(todo_list=self.__todo_list)
 
         # Create the "md" file
         with open(self.__gen_path, "w") as gf:
