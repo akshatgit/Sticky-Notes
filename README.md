@@ -47,27 +47,3 @@ Once you have installed Sticky-Notes using one of the above method, verify that 
 stickynotes --help
 
 ```
-
-Create a virtualenv:
-
-```shell
-python -m venv venv
-```
-
-Install requirements:
-
-```shell
-pip install -r requirments.txt
-```
-
-Activate Vitual ENV:
-
-```shell
-source venv/bin/activate
-```
-
-Export python path at the root of the structure:
-
-```shell
- export PYTHONPATH='.'
-```
