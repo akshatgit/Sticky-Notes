@@ -47,3 +47,15 @@ Once you have installed Sticky-Notes using one of the above method, verify that 
 stickynotes --help
 
 ```
+
+## Sticky-Notes Usage
+
+```
+Usage: stickynotes [options]
+
+Options:
+  -h, --help         show this help message and exit
+  -d DIR, --dir=DIR  path to repo to scan | default is current directory
+  -o OUT, --out=OUT  path to generate the todo md file along with name |
+                     default is todo.md in current directory
+```
